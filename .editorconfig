@@ -11,6 +11,6 @@ indent_size = 4
 indent_size = 2
 [Makefile]
 indent_style = tab
-[{package.json,.travis.yml}]
+[{package.json,.travis.yml,*.blade.php}]
 indent_style = space
 indent_size = 2
