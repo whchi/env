@@ -7,7 +7,7 @@ charset = utf-8
 indent_style = space
 [*.{php,py}]
 indent_size = 4
-[*.{js,md,html,css,scss,less}]
+[*.{js,md,html,css,scss,less,vue}]
 indent_size = 2
 [Makefile]
 indent_style = tab
