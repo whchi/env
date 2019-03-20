@@ -5,12 +5,11 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 charset = utf-8
 indent_style = space
-[*.{php,py}]
+[*.{php,py,html}]
 indent_size = 4
-[*.{js,md,html,css,scss,less,vue}]
+[*.{js,md,css,scss,less}]
 indent_size = 2
 [Makefile]
 indent_style = tab
-[{package.json,.travis.yml,*.blade.php}]
-indent_style = space
+[{package.json,.travis.yml}]
 indent_size = 2
