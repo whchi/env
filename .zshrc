@@ -1,3 +1,5 @@
+# for screen
+export TERM="xterm-256color"
 #
 # Executes commands at the start of an interactive session.
 #
@@ -12,7 +14,6 @@ fi
 
 # Customize to your needs...
 export PATH=$HOME/bin:$PATH
-
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time virtualenv)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -53,3 +54,11 @@ export PATH=$HOME/.composer/vendor/bin:$PATH
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 alias lzd='lazydocker'
+
+# download google drive using hash
+# usage: gdload <google drive file id> <tofile.ext>
+function gdload () {
+  CONFIRM=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate "https://docs.google.com/uc?export=download&id=$1" -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')
+  wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$CONFIRM&id=$1" -O $2
+  rm -rf /tmp/cookies.txt
+}
