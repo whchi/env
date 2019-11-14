@@ -1,4 +1,4 @@
-# for screen
+# screen
 export TERM="xterm-256color"
 #
 # Executes commands at the start of an interactive session.
@@ -33,9 +33,10 @@ export NVM_DIR="$HOME/.nvm"
 # ssh into cw-it-auto-tagging gce
 alias dkn='docker ps -a --format="{{.Names}}"'
 alias din='docker images --format="{{.Repository}}"'
-# dakala 
+# dakala
 alias dakai='~/dev/cw-tools/autodaka/venv/bin/python ~/dev/cw-tools/autodaka/main.py -c ~/dev/cw-tools/autodaka/config.ini -ct In'
 alias dakao='~/dev/cw-tools/autodaka/venv/bin/python ~/dev/cw-tools/autodaka/main.py -c ~/dev/cw-tools/autodaka/config.ini -ct Out'
+alias lzd='lazydocker'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/dylanchi/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dylanchi/google-cloud-sdk/path.zsh.inc'; fi
@@ -46,14 +47,11 @@ if [ -f '/Users/dylanchi/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/
 #######################
 ##  coding settings  ##
 #######################
-# php
 export PATH=$HOME/.composer/vendor/bin:$PATH
 # gui
 #/bin/launchctl setenv PATH $PATH
-# python django
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
-alias lzd='lazydocker'
 
 # download google drive using hash
 # usage: gdload <google drive file id> <tofile.ext>
