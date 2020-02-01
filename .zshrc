@@ -24,9 +24,8 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 #export GOOGLE_APPLICATION_CREDENTIALS="/Users/dylanchi/dev/auto-tagging/cw-it-lab-service_account.json"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow'
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 ###############
 ##   alias   ##
 ###############
