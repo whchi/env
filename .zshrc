@@ -18,10 +18,6 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time virtualenv)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-
-POWERLEVEL9K_MODE='nerdfont-complete'
-# google cloud platform
-#export GOOGLE_APPLICATION_CREDENTIALS="/Users/dylanchi/dev/auto-tagging/cw-it-lab-service_account.json"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow'
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -29,14 +25,11 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 ###############
 ##   alias   ##
 ###############
-# ssh into cw-it-auto-tagging gce
 alias dkn='docker ps -a --format="{{.Names}}"'
 alias din='docker images --format="{{.Repository}}"'
 alias lzd='lazydocker'
-#######################
-##  coding settings  ##
-#######################
-export PATH=$HOME/.composer/vendor/bin:$PATH
+alias minienv='eval $(minikube docker-env)'
+alias minienvexit='eval $(minikube docker-env -u)'
 
 # download google drive using hash
 # usage: gdload <google drive file id> <tofile.ext>
