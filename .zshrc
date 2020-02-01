@@ -33,25 +33,11 @@ export NVM_DIR="$HOME/.nvm"
 # ssh into cw-it-auto-tagging gce
 alias dkn='docker ps -a --format="{{.Names}}"'
 alias din='docker images --format="{{.Repository}}"'
-# dakala
-alias dakai='~/dev/cw-tools/autodaka/venv/bin/python ~/dev/cw-tools/autodaka/main.py -c ~/dev/cw-tools/autodaka/config.ini -ct In'
-alias dakao='~/dev/cw-tools/autodaka/venv/bin/python ~/dev/cw-tools/autodaka/main.py -c ~/dev/cw-tools/autodaka/config.ini -ct Out'
 alias lzd='lazydocker'
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/dylanchi/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dylanchi/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/dylanchi/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dylanchi/google-cloud-sdk/completion.zsh.inc'; fi
-
 #######################
 ##  coding settings  ##
 #######################
 export PATH=$HOME/.composer/vendor/bin:$PATH
-# gui
-#/bin/launchctl setenv PATH $PATH
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
 # download google drive using hash
 # usage: gdload <google drive file id> <tofile.ext>
@@ -60,3 +46,5 @@ function gdload () {
   wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$CONFIRM&id=$1" -O $2
   rm -rf /tmp/cookies.txt
 }
+export EDITOR=vim
+export VISUAL="$EDITOR"
