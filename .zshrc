@@ -29,6 +29,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 ###############
 alias dkn='docker ps -a --format="{{.Names}}"'
 alias din='docker images --format="{{.Repository}}"'
+alias drm='docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm'
+alias drmi='docker images -f "dangling=true" -q |xargs docker rm'
 alias lzd='lazydocker'
 alias minienv='eval $(minikube docker-env)'
 alias minienvexit='eval $(minikube docker-env -u)'
