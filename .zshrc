@@ -34,7 +34,23 @@ alias drmi='docker rmi $(docker images -f "dangling=true" -q)'
 alias lzd='lazydocker'
 alias minienv='eval $(minikube docker-env)'
 alias minienvexit='eval $(minikube docker-env -u)'
-
+alias kc="kubectl"
+alias kca="kubectl apply"
+alias kcA="kubectl attach"
+alias kcaf="kubectl apply -f"
+alias kcaF="kubectl apply -R -f"
+alias kcC="kubectl config"
+alias kcc="kubectl create"
+alias kcD="kubectl delete"
+alias kcd="kubectl describe"
+alias kce="kubectl edit"
+alias kcg="kubectl get"
+alias kcl="kubectl logs"
+alias kcp="kubectl port-forward"
+alias kcP="kubectl proxy"
+alias kcr="kubectl run"
+alias kcx="kubectl exec"
+alias kcX="kubectl expose"
 # download google drive using hash
 # usage: gdload <google drive file id> <tofile.ext>
 function gdload () {
