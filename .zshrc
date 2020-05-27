@@ -58,5 +58,11 @@ function gdload () {
   wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$CONFIRM&id=$1" -O $2
   rm -rf /tmp/cookies.txt
 }
+# delete images using prefix
+# usage: drmis <prefix>
+function drmis() {
+  list=$(docker images | grep '^'$1 | tr -s ' ' | cut -d ' ' -f 3)
+  docker rmi $list
+}
 export EDITOR=vim
 export VISUAL="$EDITOR"
