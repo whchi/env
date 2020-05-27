@@ -60,9 +60,9 @@ function gdload () {
   rm -rf /tmp/cookies.txt
 }
 # delete images using prefix
-# usage: drmis <prefix>
+# usage: drmis <prefix> [-f]
 function drmis() {
-  docker rmi $(docker images | grep '^'$1 | tr -s ' ' | cut -d ' ' -f 3)
+  docker rmi $2 $(docker images | grep '^'$1 | tr -s ' ' | cut -d ' ' -f 3)
 }
 
 export EDITOR=vim
