@@ -51,6 +51,7 @@ alias kcP="kubectl proxy"
 alias kcr="kubectl run"
 alias kcx="kubectl exec"
 alias kcX="kubectl expose"
+
 # download google drive using hash
 # usage: gdload <google drive file id> <tofile.ext>
 function gdload () {
@@ -61,8 +62,8 @@ function gdload () {
 # delete images using prefix
 # usage: drmis <prefix>
 function drmis() {
-  list=$(docker images | grep '^'$1 | tr -s ' ' | cut -d ' ' -f 3)
-  docker rmi $list
+  docker rmi $(docker images | grep '^'$1 | tr -s ' ' | cut -d ' ' -f 3)
 }
+
 export EDITOR=vim
 export VISUAL="$EDITOR"
