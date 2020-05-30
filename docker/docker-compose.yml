@@ -1,0 +1,76 @@
+version: "3.7"
+services:
+  ### web ###
+  web:
+    container_name: local_dev
+    image: whcdc/dockerfile:c7_web
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ~/docker/mount/var/www:/var/www
+      - ~/docker/mount/tools:/tools
+      - ~/docker/mount/root/dev:/root/dev
+      - ~/docker/mount/etc/nginx/site-available:/etc/nginx/site-available
+      - ~/docker/mount/etc/nginx/ssl:/etc/nginx/ssl
+      - ~/docker/mount/var/log/nginx:/var/log/nginx
+      - ~/docker/mount/etc/php73:/etc/php73
+      - ~/docker/mount/var/log/xdebug:/var/log/xdebug
+    ports:
+      - "2222:22"
+      - "80:80"
+      - "443:443"
+    privileged: true
+    networks:
+      local_network:
+        ipv4_address: 172.28.0.2
+    depends_on:
+      - php-fpm-73
+
+  ### php-fpm ###
+  php-fpm-73:
+    container_name: local_php_fpm_73
+    image: whcdc/php-fpm:7.3.11
+    volumes:
+      - ~/docker/mount/var/www:/var/www
+      - ~/docker/mount/var/log/php73:/var/log/php-fpm
+    ports:
+      - "2273:22"
+      - "8073:80"
+      - "8074:443"
+    networks:
+      local_network:
+        ipv4_address: 172.28.0.4
+
+  ### mysql ###
+  mysql:
+    image: mysql:8
+    # command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ~/docker/mount/var/lib/mysql:/var/lib/mysql
+    ports:
+      - "2223:22"
+      - "3306:3306"
+    privileged: true
+    networks:
+      local_network:
+        ipv4_address: 172.28.0.5
+    container_name: local_mysql
+
+  ### redis ###
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      local_network:
+        ipv4_address: 172.28.0.6
+    container_name: local_redis
+networks:
+  local_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16
