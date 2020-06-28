@@ -27,6 +27,8 @@ syncs:
         '*.coffee',
         '*.scss',
         '*.sass',
+        'storage',
+        'database'
       ]
     # optional, default can be either rsync or unison See Strategies in the wiki for explanation
     sync_strategy: 'unison'
