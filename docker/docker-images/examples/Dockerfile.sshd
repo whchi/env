@@ -1,0 +1,12 @@
+FROM centos:7
+ENV container=docker \
+    TZ=Asia/Taipei
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN yum -y install openssh-server && \
+    systemctl enable sshd.service && \
+    echo 'password' | passwd --stdin root
+
+EXPOSE 22
+
+CMD ["/usr/sbin/init"]

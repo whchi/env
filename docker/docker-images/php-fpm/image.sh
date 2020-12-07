@@ -1,7 +1,6 @@
 #!/bin/sh
 
-PHP_VERSION="7.4"
-IMAGE_NAME="whcdc/php-fpm:${PHP_VERSION}"
+IMAGE_NAME="whcdc/php-fpm:$2"
 
 case "$1" in
     build)

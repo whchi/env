@@ -16,11 +16,9 @@ RUN yum -y update; \
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN yum -y install epel-release && \
-    yum -y install bash-completion net-tools wget git tree yum-utils openssh-server vim && \
+    yum -y install bash-completion net-tools wget git tree yum-utils vim && \
     yum -y groups install 'Development Tools' && \
     yum -y install systemtap-sdt-devel libaio libpng12 nasm && \
-    systemctl enable sshd.service && \
-    echo 'password' | passwd --stdin root && \
     yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm && \
     yum-config-manager --enable remi && \
     yum-config-manager --enable remi-php73 && \
@@ -78,13 +76,13 @@ RUN mv -f /root/downloads/nginx.conf /etc/nginx/nginx.conf && \
     cd /root/downloads && \
     chmod 0775 /root/downloads/composer-install.sh && \
     /root/downloads/composer-install.sh && \
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash && \
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash && \
     source ~/.bashrc && \
     nvm install --lts && \
     nvm use default && \
+    cp /etc/php-fpm.conf /etc/php-fpm.conf.orig && \
     npm install -g yarn && \
     yum clean all && \
-    cp /etc/php-fpm.conf /etc/php-fpm.conf.orig && \
     echo "include=/etc/php73/*.conf" >> /etc/php-fpm.conf && \
     echo "xdebug.remote_enable=1" >> /etc/php.d/15-xdebug.ini && \
     echo "xdebug.remote_port=9000" >> /etc/php.d/15-xdebug.ini && \

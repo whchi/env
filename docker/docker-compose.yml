@@ -8,14 +8,10 @@ services:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - ~/docker/mount/var/www:/var/www
       - ~/docker/mount/tools:/tools
-      - ~/docker/mount/root/dev:/root/dev
       - ~/docker/mount/etc/nginx/site-available:/etc/nginx/site-available
       - ~/docker/mount/etc/nginx/ssl:/etc/nginx/ssl
-      - ~/docker/mount/var/log/nginx:/var/log/nginx
       - ~/docker/mount/etc/php73:/etc/php73
-      - ~/docker/mount/var/log/xdebug:/var/log/xdebug
     ports:
-      - "2222:22"
       - "80:80"
       - "443:443"
     privileged: true

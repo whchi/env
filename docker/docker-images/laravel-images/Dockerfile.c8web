@@ -71,10 +71,11 @@ RUN mv -f /root/downloads/nginx.conf /etc/nginx/nginx.conf && \
     cd /root/downloads && \
     chmod 0775 /root/downloads/composer-install.sh && \
     /root/downloads/composer-install.sh && \
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash && \
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash && \
     source ~/.bashrc && \
     nvm install --lts && \
     nvm use default && \
+    npm install -g yarn && \
     yum clean all && \
     cp /etc/php-fpm.conf /etc/php-fpm.conf.orig && \
     echo "include=/etc/php74/*.conf" >> /etc/php-fpm.conf && \
@@ -88,7 +89,7 @@ RUN mv -f /root/downloads/nginx.conf /etc/nginx/nginx.conf && \
     echo "xdebug.remote_host=docker.for.mac.localhost" >> /etc/php.d/15-xdebug.ini && \
     echo "xdebug.idekey=docker" >> /etc/php.d/15-xdebug.ini
 
-EXPOSE 22 80 443
+EXPOSE 80 443
 VOLUME ["/sys/fs/cgroup"]
 
 CMD ["/usr/sbin/init"]
