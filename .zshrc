@@ -52,6 +52,7 @@ alias kcP="kubectl proxy"
 alias kcr="kubectl run"
 alias kcx="kubectl exec"
 alias kcX="kubectl expose"
+alias sinit="source ~/.zshrc"
 
 # download google drive using hash
 # usage: gdload <google drive file id> <tofile.ext>
