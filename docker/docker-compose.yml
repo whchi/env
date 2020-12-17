@@ -24,14 +24,10 @@ services:
   ### php-fpm ###
   php-fpm-73:
     container_name: local_php_fpm_73
-    image: whcdc/php-fpm:7.3.11
+    image: whcdc/php-fpm:7.3.25
     volumes:
       - ~/docker/mount/var/www:/var/www
       - ~/docker/mount/var/log/php73:/var/log/php-fpm
-    ports:
-      - "2273:22"
-      - "8073:80"
-      - "8074:443"
     networks:
       local_network:
         ipv4_address: 172.28.0.4
@@ -46,7 +42,6 @@ services:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - ~/docker/mount/var/lib/mysql:/var/lib/mysql
     ports:
-      - "2223:22"
       - "3306:3306"
     privileged: true
     networks:

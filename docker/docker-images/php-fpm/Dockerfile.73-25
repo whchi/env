@@ -107,6 +107,11 @@ COPY php.ini /usr/local/etc/php/php.ini
 COPY php-fpm.conf /usr/local/etc/php-fpm.conf
 
 COPY entrypoint.sh /entrypoint.sh
+COPY composer-install.sh /composer-install.sh
+
+RUN chmod 0775 /composer-install.sh && \
+    /composer-install.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 9000/tcp
