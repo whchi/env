@@ -1,0 +1,21 @@
+#!/bin/bash
+
+LOCAL="/path/to/docroot/"
+REMOTE="remote@host:/path/to/docroot/"
+TYPE=$1
+EXCLUDES=(rsync.sh .svn .cvs .idea .DS_Store .git node_modules)
+
+for ((i = 0; i < ${#EXCLUDES[@]}; i++)); do
+  EXCLUDES[$i]="--exclude ${EXCLUDES[$i]}"
+done
+
+# shellcheck disable=SC2206
+OPTIONS=(-azPO --no-perms --delete ${EXCLUDES[@]})
+
+if [[ "$TYPE" == "download" ]]; then
+  rsync "${OPTIONS[@]}" $REMOTE $LOCAL
+elif [[ "$TYPE" == "upload" ]]; then
+  rsync "${OPTIONS[@]}" $LOCAL $REMOTE
+else
+  echo "Nothing happened"
+fi
