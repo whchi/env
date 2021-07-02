@@ -1,0 +1,9 @@
+FROM ethereum/solc:0.8.0-alpine
+
+COPY ./entrypoint.sh /entrypoint.sh
+COPY ./compile_solc.sh /usr/bin/compile_solc
+
+RUN chmod +x /entrypoint.sh
+RUN chmod +x /usr/bin/compile_solc
+
+ENTRYPOINT ["/entrypoint.sh"]

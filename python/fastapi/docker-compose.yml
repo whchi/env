@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  postgresql:
+    image: postgres:13.1
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    privileged: true
+  ### app ###
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: local_fastapi_app
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/app
+    command:
+      - uvicorn
+      - app.main:app
+      - --host
+      - 0.0.0.0
+      - --reload
+    depends_on:
+      - postgresql
+  ### Redis ################################################
+  redis:
+    image: redis
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+volumes:
+  postgres:

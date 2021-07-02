@@ -2,19 +2,17 @@ version: '3.7'
 services:
   ### web ###
   web:
-    image: whcdc/dockerfile:c7_web
+    image: local_laravel_app
+    build:
+        context: .
+        dockerfile: Dockerfile
     volumes:
       - ~/local/docroot:/var/www/html/docroot
     ports:
       - '80:80'
       - '443:443'
     privileged: true
-    depends_on:
-      - php-fpm-73
 
-  ### php-fpm ###
-  php-fpm-73:
-    image: whcdc/php-fpm:7.3.25
   ### mysql ###
   mysql:
     image: mysql:8

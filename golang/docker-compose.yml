@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  app:
+    image: whcdc/golang1.16-selenium-chrome
+    working_dir: /app
+    build:
+      context: .
+      dockerfile: Dockerfile.base
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/app
+    command: ["tail", "-f", "/dev/null"]

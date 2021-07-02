@@ -1,0 +1,6 @@
+.vscode
+.idea
+.git
+venv
+k8s
+node_modules

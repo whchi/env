@@ -2,7 +2,7 @@
 
 SUFFIX=$2
 TAG="latest"
-IMAGE_NAME="c7_${SUFFIX}:${TAG}"
+IMAGE_NAME="app_${SUFFIX}:${TAG}"
 
 case "$1" in
     build)
