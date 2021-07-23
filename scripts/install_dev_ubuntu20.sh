@@ -23,3 +23,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 # git
 
 sudo apt install -y git
+
+# rootless docker
+
+sudo usermod -aG docker ${USER}
