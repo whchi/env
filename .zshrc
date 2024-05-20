@@ -69,3 +69,4 @@ function drmis() {
 
 export EDITOR=vim
 export VISUAL="$EDITOR"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
