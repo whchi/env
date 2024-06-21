@@ -70,3 +70,7 @@ function drmis() {
 export EDITOR=vim
 export VISUAL="$EDITOR"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# google cloud sdk using homebrew
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
