@@ -81,6 +81,7 @@
     "prisma.prisma",
     "4ops.terraform",
     "ms-vscode.vscode-speech",
-    "wakatime.vscode-wakatime"
+    "wakatime.vscode-wakatime",
+    "ms-azuretools.vscode-containers",
   ]
 }
