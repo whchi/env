@@ -1,0 +1,222 @@
+{
+  // github copilot
+  "workbench.commandPalette.experimental.askChatLocation": "chatView",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "editor.inlineSuggest.edits.showCollapsed": true,
+  "github.copilot.chat.useProjectTemplates": true,
+  "github.copilot.chat.scopeSelection": true,
+  "chat.detectParticipant.enabled": false,
+  "chat.promptFiles": true,
+  "chat.promptFilesLocations": {
+    ".github/personal-prompts": true
+  },
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.chat.editor.temporalContext.enabled": true,
+  "inlineChat.finishOnType": false,
+  "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.testGeneration.instructions": [
+    {
+      "file": ".copilot-test-instructions.md"
+    },
+    {
+      "text": "Always try uniting related tests in a suite."
+    }
+  ],
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": ".copilot-codeGeneration-instructions.md"
+    }
+  ],
+  "github.copilot.chat.reviewSelection.instructions": [
+    {
+      "file": ".copilot-review-instructions.md"
+    }
+  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": ".copilot-commit-message-instructions.md"
+    }
+  ],
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+    {
+      "file": ".copilot-pull-request-description-instructions.md"
+    }
+  ],
+  "github.copilot.chat.edits.suggestRelatedFilesForTests": true,
+  "github.copilot.chat.edits.suggestRelatedFilesFromGitHistory": true,
+  "chat.mcp.enabled": true,
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": false,
+    "windsurf": false,
+    "cursor-global": false,
+    "cursor-workspace": false
+  },
+
+  // editor settings
+  "diffEditor.maxComputationTime": 2000,
+  "breadcrumbs.enabled": true,
+  "files.trimTrailingWhitespace": true,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.idea": true,
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+    "**/.svn": true,
+    "**/.venv": true,
+    "**/CVS": true
+  },
+  "search.exclude": {
+    "*.log": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true,
+    "**/.venv": true,
+    "vendor/": true,
+    // "**/*.json": true,
+    "**/.vscode": true,
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+    "**/.idea": true
+  },
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.tree.renderIndentGuides": "none",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "explorer.openEditors.visible": 1,
+  "editor.padding.top": 20,
+  "editor.padding.bottom": 20,
+  "editor.rulers": [88],
+  "editor.minimap.enabled": false,
+  "editor.tabCompletion": "onlySnippets",
+  "editor.tabSize": 4,
+  "editor.detectIndentation": false,
+  "editor.fontSize": 16,
+  "editor.fontFamily": "'Fira code'",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 22,
+  "editor.renderWhitespace": "boundary",
+  "editor.scrollBeyondLastLine": false,
+  "editor.snippetSuggestions": "top",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never"
+  },
+  "terminal.integrated.fontSize": 13,
+  "merge-conflict.diffViewPosition": "Below",
+  "workbench.editor.showTabs": "multiple",
+  "workbench.commandPalette.history": 10,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // formtter
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[go]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "workbench.startupEditor": "none",
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  // script settings
+  "eslint.format.enable": true,
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "php.validate.enable": true,
+  "php.validate.run": "onType",
+  "php.suggest.basic": false,
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  // extension settings
+  "prettier.singleQuote": true,
+  "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\]|@todo)",
+  "auto-close-tag.fullMode": true,
+  "emmet.includeLanguages": {
+    "blade": "html",
+    "django": "html",
+    "vue-html": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "always",
+  "yaml.format.singleQuote": true,
+  "breadcrumbs.showFields": false,
+  "material-icon-theme.folders.theme": "specific",
+  "python.languageServer": "Pylance",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "*.pdf": "pdf.preview",
+    "*.sql": "default"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "scminput": false,
+    "yaml": true
+  },
+
+  "mypy.enabled": false,
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": ["${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe"],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "terminal.integrated.fontFamily": "Fira code",
+  "editor.guides.bracketPairs": true
+}

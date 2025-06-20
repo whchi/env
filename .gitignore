@@ -1,5 +1,4 @@
 rsync.sh
-.vscode
 .idea
 .git
 venv
