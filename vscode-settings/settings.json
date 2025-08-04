@@ -97,7 +97,7 @@
   "editor.tabSize": 4,
   "editor.detectIndentation": false,
   "editor.fontSize": 16,
-  "editor.fontFamily": "'Fira code'",
+  "editor.fontFamily": "Google Sans Code, Fira code",
   "editor.fontLigatures": true,
   "editor.lineHeight": 22,
   "editor.renderWhitespace": "boundary",
@@ -217,6 +217,6 @@
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "editor.inlineSuggest.suppressSuggestions": true,
-  "terminal.integrated.fontFamily": "Fira code",
+  "terminal.integrated.fontFamily": "Google Sans Code, Fira code",
   "editor.guides.bracketPairs": true
 }
