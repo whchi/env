@@ -150,7 +150,6 @@
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
-  "workbench.startupEditor": "none",
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
@@ -160,7 +159,12 @@
   "[css]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  "[php]": {
+    "editor.defaultFormatter": "kokororin.vscode-phpfmt",
+    "editor.formatOnSave": true
+  },
   // script settings
+  "workbench.startupEditor": "none",
   "eslint.format.enable": true,
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",
