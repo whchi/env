@@ -39,10 +39,10 @@
       "type": "stdio"
     },
     "code-index": {
-        "command": "uvx",
-        "args": ["code-index-mcp"]
+      "command": "uvx",
+      "args": ["code-index-mcp"]
     },
-      "chrome-devtools": {
+    "chrome-devtools": {
       "command": "npx",
       "args": ["chrome-devtools-mcp@latest"]
     }
