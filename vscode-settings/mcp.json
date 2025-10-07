@@ -41,6 +41,10 @@
     "code-index": {
         "command": "uvx",
         "args": ["code-index-mcp"]
+    },
+      "chrome-devtools": {
+      "command": "npx",
+      "args": ["chrome-devtools-mcp@latest"]
     }
   }
 }
