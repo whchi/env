@@ -5,14 +5,12 @@
   "editor.inlineSuggest.edits.showCollapsed": true,
   "github.copilot.chat.useProjectTemplates": true,
   "github.copilot.chat.scopeSelection": true,
+  "chat.useClaudeSkills": true,
   "chat.detectParticipant.enabled": false,
-  "chat.promptFiles": true,
   "chat.promptFilesLocations": {
     ".github/personal-prompts": true
   },
   "github.copilot.chat.languageContext.typescript.enabled": true,
-  "github.copilot.chat.agent.thinkingTool": true,
-  "github.copilot.chat.editor.temporalContext.enabled": true,
   "inlineChat.finishOnType": false,
   "github.copilot.chat.generateTests.codeLens": true,
   "github.copilot.chat.testGeneration.instructions": [
@@ -46,13 +44,12 @@
   ],
   "github.copilot.chat.edits.suggestRelatedFilesForTests": true,
   "github.copilot.chat.edits.suggestRelatedFilesFromGitHistory": true,
-  "chat.mcp.enabled": true,
   "chat.mcp.discovery.enabled": {
     "claude-desktop": false,
     "windsurf": false,
     "cursor-global": false,
     "cursor-workspace": false
-  },
+},
 
   // editor settings
   "diffEditor.maxComputationTime": 2000,
@@ -70,8 +67,9 @@
     "**/.pytest_cache": true,
     "**/.svn": true,
     "**/.venv": true,
-    "**/CVS": true
-  },
+    "**/CVS": true,
+    "**/dist": true
+},
   "search.exclude": {
     "*.log": true,
     "**/node_modules": true,
@@ -116,9 +114,6 @@
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "[vue]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
   "[html]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
@@ -150,6 +145,7 @@
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
+  "workbench.startupEditor": "none",
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
@@ -159,12 +155,7 @@
   "[css]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "[php]": {
-    "editor.defaultFormatter": "kokororin.vscode-phpfmt",
-    "editor.formatOnSave": true
-  },
   // script settings
-  "workbench.startupEditor": "none",
   "eslint.format.enable": true,
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",
@@ -201,10 +192,10 @@
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
+    "markdown": false,
     "scminput": false,
     "yaml": true
-  },
-
+},
   "mypy.enabled": false,
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
@@ -212,7 +203,10 @@
       "icon": "terminal-powershell"
     },
     "Command Prompt": {
-      "path": ["${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe"],
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
       "args": [],
       "icon": "terminal-cmd"
     },
@@ -224,6 +218,11 @@
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "editor.inlineSuggest.suppressSuggestions": true,
-  "terminal.integrated.fontFamily": "Google Sans Code, Fira code",
-  "editor.guides.bracketPairs": true
+  "terminal.integrated.fontFamily": "Google Sans Code, Fira Code",
+  "editor.guides.bracketPairs": true,
+  "chat.mcp.access": "all",
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+},
+"prisma.hidePrisma6Prompts": true
 }
