@@ -13,14 +13,6 @@
   "github.copilot.chat.languageContext.typescript.enabled": true,
   "inlineChat.finishOnType": false,
   "github.copilot.chat.generateTests.codeLens": true,
-  "github.copilot.chat.testGeneration.instructions": [
-    {
-      "file": ".copilot-test-instructions.md"
-    },
-    {
-      "text": "Always try uniting related tests in a suite."
-    }
-  ],
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   "github.copilot.chat.codeGeneration.instructions": [
     {
