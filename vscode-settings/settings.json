@@ -5,7 +5,8 @@
   "editor.inlineSuggest.edits.showCollapsed": true,
   "github.copilot.chat.useProjectTemplates": true,
   "github.copilot.chat.scopeSelection": true,
-  "chat.useClaudeSkills": true,
+  "chat.useAgentsMdFile": true,
+  "chat.useAgentSkills": true,
   "chat.detectParticipant.enabled": false,
   "chat.promptFilesLocations": {
     ".github/personal-prompts": true
