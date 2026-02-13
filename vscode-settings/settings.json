@@ -4,9 +4,7 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "editor.inlineSuggest.edits.showCollapsed": true,
   "github.copilot.chat.useProjectTemplates": true,
-  "github.copilot.chat.scopeSelection": true,
-  "chat.useAgentsMdFile": true,
-  "chat.useAgentSkills": true,
+    "github.copilot.chat.scopeSelection": true,
   "chat.detectParticipant.enabled": false,
   "chat.promptFilesLocations": {
     ".github/personal-prompts": true
@@ -14,7 +12,20 @@
   "github.copilot.chat.languageContext.typescript.enabled": true,
   "inlineChat.finishOnType": false,
   "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.testGeneration.instructions": [
+    {
+      "file": ".copilot-test-instructions.md"
+    },
+    {
+      "text": "Always try uniting related tests in a suite."
+    }
+  ],
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": ".copilot-codeGeneration-instructions.md"
+    }
+  ],
   "github.copilot.chat.reviewSelection.instructions": [
     {
       "file": ".copilot-review-instructions.md"
@@ -30,8 +41,6 @@
       "file": ".copilot-pull-request-description-instructions.md"
     }
   ],
-  "github.copilot.chat.edits.suggestRelatedFilesForTests": true,
-  "github.copilot.chat.edits.suggestRelatedFilesFromGitHistory": true,
   "chat.mcp.discovery.enabled": {
     "claude-desktop": false,
     "windsurf": false,
@@ -97,7 +106,6 @@
   "workbench.editor.showTabs": "multiple",
   "workbench.commandPalette.history": 10,
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   // formtter
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
@@ -144,16 +152,12 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   // script settings
-  "eslint.format.enable": true,
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.quoteStyle": "single",
   "php.validate.enable": true,
   "php.validate.run": "onType",
   "php.suggest.basic": false,
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
   // extension settings
-  "prettier.singleQuote": true,
-  "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\]|@todo)",
   "auto-close-tag.fullMode": true,
   "emmet.includeLanguages": {
     "blade": "html",
@@ -162,10 +166,8 @@
   },
   "emmet.triggerExpansionOnTab": true,
   "emmet.showExpandedAbbreviation": "always",
-  "yaml.format.singleQuote": true,
   "breadcrumbs.showFields": false,
   "material-icon-theme.folders.theme": "specific",
-  "python.languageServer": "Pylance",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook",
     "*.pdf": "pdf.preview",
@@ -183,8 +185,7 @@
     "markdown": false,
     "scminput": false,
     "yaml": true
-},
-  "mypy.enabled": false,
+  },
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
       "source": "PowerShell",
@@ -212,5 +213,15 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
 },
-"prisma.hidePrisma6Prompts": true
+"chat.useAgentSkills": true,
+"javascript.updateImportsOnFileMove.enabled": "always",
+"json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://biomejs.dev": true
+},
+"chat.viewSessions.orientation": "stacked"
 }
