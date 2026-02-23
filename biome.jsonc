@@ -1,6 +1,6 @@
 {
   // @see https://biomejs.dev/reference/configuration
-  "$schema": "https://biomejs.dev/schemas/2.1.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.4/schema.json",
   "files": {
     "includes": ["**", "!**/package.json"],
     "ignoreUnknown": true
@@ -21,6 +21,11 @@
     "indentWidth": 2,
     "lineWidth": 120
   },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "javascript": {
     "formatter": {
       "arrowParentheses": "asNeeded",
@@ -28,17 +33,7 @@
       "semicolons": "always",
       "trailingCommas": "all"
     },
-    "globals": [
-      "afterAll",
-      "afterEach",
-      "beforeAll",
-      "beforeEach",
-      "describe",
-      "expect",
-      "it",
-      "jest",
-      "test"
-    ]
+    "globals": ["afterAll", "afterEach", "beforeAll", "beforeEach", "describe", "expect", "it", "jest", "test"]
   },
   "linter": {
     "rules": {
@@ -69,13 +64,7 @@
   },
   "overrides": [
     {
-      "includes": [
-        "**/constants/**",
-        "**/constants.ts",
-        "**/types.ts",
-        "**/*.types.ts",
-        "**/typings/**/*.d.ts"
-      ],
+      "includes": ["**/constants/**", "**/constants.ts", "**/types.ts", "**/*.types.ts", "**/typings/**/*.d.ts"],
       "linter": {
         "rules": {
           "style": {
