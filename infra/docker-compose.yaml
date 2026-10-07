@@ -1,0 +1,8 @@
+name: dev-infra
+include:
+  - ./network.yaml
+  - ./redis/sentinel.yaml
+  - ./db/postgres.yaml
+  - ./smtp/mailpit.yaml
+  - ./storage/minio.yaml
+services: {}

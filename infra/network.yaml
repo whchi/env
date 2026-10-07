@@ -1,0 +1,6 @@
+services: {}
+
+networks:
+  default:
+    name: dev-infra-network
+    driver: bridge
